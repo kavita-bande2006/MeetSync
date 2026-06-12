@@ -22,7 +22,7 @@ app.use("/api/v1/users",usersRoutes);
 
 const start = async () => {
     app.set("mongo_user")
-    const connectDb = await mongoose.connect("mongodb://kavitabande2006_db_user:2yJk6TTI8IF1W2GZ@ac-bhyh9hr-shard-00-00.wdua9kp.mongodb.net:27017,ac-bhyh9hr-shard-00-01.wdua9kp.mongodb.net:27017,ac-bhyh9hr-shard-00-02.wdua9kp.mongodb.net:27017/?ssl=true&replicaSet=atlas-1l6m7e-shard-0&authSource=admin&appName=Cluster1");
+    const connectDb = await mongoose.connect(process.env.MONGO_URI);
     console.log("connect successefully");
     server.listen(app.get("port"),() => {
         console.log("LISTENING TO THE PORT 8000")
