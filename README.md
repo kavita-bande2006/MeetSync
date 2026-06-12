@@ -149,10 +149,7 @@ Socket.IO handles chat & signaling
 
 ## 🌐 Deployment
 
-- **Frontend** — [Vercel](https://vercel.com)
-- **Backend** — [Render](https://render.com)
-- **Database** — [MongoDB Atlas](https://cloud.mongodb.com)
-
+- **Frontend** — [Render](https://meetsyncfrontend-21y2.onrender.com/)
 ---
 
 ## 📌 Future Improvements
