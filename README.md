@@ -1,70 +1,178 @@
-# Getting Started with Create React App
+# MeetSync 🎥
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack video conferencing web application built with React, Node.js, WebRTC, and Socket.IO.
 
-## Available Scripts
+![MeetSync](https://img.shields.io/badge/Status-Live-brightgreen) ![React](https://img.shields.io/badge/React-18-blue) ![Node.js](https://img.shields.io/badge/Node.js-Express-green) ![WebRTC](https://img.shields.io/badge/WebRTC-Peer--to--Peer-orange) ![MongoDB](https://img.shields.io/badge/MongoDB-Database-darkgreen)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🎥 **Real-time video calls** — peer-to-peer using WebRTC
+- 🎤 **Audio/Video controls** — toggle mic and camera mid-call
+- 🖥️ **Screen sharing** — share your screen with participants
+- 💬 **In-call chat** — send messages during a meeting with unread badge
+- 📋 **Meeting history** — view, copy, and rejoin past meetings
+- 👥 **Guest access** — join without an account
+- 🔐 **Authentication** — register/login with JWT
+- 📱 **Responsive grid** — auto-adapts layout based on participant count
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend
+| Tech | Usage |
+|------|-------|
+| React 18 | UI framework |
+| WebRTC | Peer-to-peer video/audio |
+| Socket.IO Client | Real-time signaling |
+| Material UI | Icons |
+| React Router | Navigation |
 
-### `npm run build`
+### Backend
+| Tech | Usage |
+|------|-------|
+| Node.js + Express | REST API server |
+| Socket.IO | WebRTC signaling server |
+| MongoDB + Mongoose | Database |
+| JWT | Authentication |
+| bcrypt | Password hashing |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📁 Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+meetsync/
+├── frontend/
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── LandingPage.jsx       # Home/marketing page
+│   │   │   ├── Authentication.jsx    # Login & Register
+│   │   │   ├── home.jsx              # Dashboard - join/create meeting
+│   │   │   ├── videoMeet.jsx         # Meeting room + lobby
+│   │   │   └── History.jsx           # Past meetings
+│   │   ├── contexts/
+│   │   │   └── authContext.jsx       # Auth state management
+│   │   ├── utils/
+│   │   │   └── withAuth.js           # Protected route HOC
+│   │   └── style/
+│   │       └── videoComponent.module.css
+├── backend/
+│   ├── src/
+│   │   ├── controllers/             # Route handlers
+│   │   ├── models/                  # Mongoose schemas
+│   │   ├── routes/                  # API routes
+│   │   └── app.js                   # Express + Socket.IO server
+└── README.md
+```
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ⚙️ Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
+- Node.js v18+
+- MongoDB (local or Atlas)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1. Clone the repository
+```bash
+git clone https://github.com/kavita-bande2006/meetsync.git
+cd meetsync
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2. Setup Backend
+```bash
+cd backend
+npm install
+```
 
-## Learn More
+Create a `.env` file in `/backend`:
+```env
+PORT=8080
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start the server:
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 3. Setup Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
 
-### Code Splitting
+App runs at `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🔌 How It Works
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+User A joins meeting
+      ↓
+Socket.IO signals User B
+      ↓
+WebRTC peer connection established
+      ↓
+Direct video/audio stream between peers
+      ↓
+Socket.IO handles chat & signaling
+```
 
-### Making a Progressive Web App
+1. User joins with a meeting code → connects to Socket.IO server
+2. Server broadcasts to all users in the room
+3. WebRTC `RTCPeerConnection` is created between all peers
+4. ICE candidates exchanged via Socket.IO (STUN server for NAT traversal)
+5. Direct media stream flows peer-to-peer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📸 Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> Add screenshots of each page here after deployment
 
-### Deployment
+| Page | Preview |
+|------|---------|
+| Landing Page | ![landing](#) |
+| Login | ![login](#) |
+| Lobby | ![lobby](#) |
+| Meeting Room | ![meeting](#) |
+| History | ![history](#) |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🌐 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Frontend** — [Vercel](https://vercel.com)
+- **Backend** — [Render](https://render.com)
+- **Database** — [MongoDB Atlas](https://cloud.mongodb.com)
+
+---
+
+## 📌 Future Improvements
+
+- [ ] Participant name display via WebRTC data channel
+- [ ] Virtual backgrounds
+- [ ] Meeting recording
+- [ ] Waiting room before joining
+- [ ] Mobile app (React Native)
+
+---
+
+## 👩‍💻 Author
+
+**Kavita Bande**
+- GitHub: [@kavita-bande2006](https://github.com/kavita-bande2006)
+- LinkedIn: [linkedin.com/in/kavita-bande-983a5836a](https://linkedin.com/in/kavita-bande-983a5836a)
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
