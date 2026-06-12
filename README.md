@@ -135,7 +135,7 @@ Socket.IO handles chat & signaling
 
 ## 📸 Screenshots
 
-> Add screenshots of each page here after deployment
+
 
 | Page | Preview |
 |------|---------|
