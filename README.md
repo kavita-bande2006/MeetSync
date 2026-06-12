@@ -90,7 +90,7 @@ npm install
 
 Create a `.env` file in `/backend`:
 ```env
-PORT=8080
+PORT=8000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 ```
