@@ -133,23 +133,9 @@ Socket.IO handles chat & signaling
 
 ---
 
-## 📸 Screenshots
-
-
-
-| Page | Preview |
-|------|---------|
-| Landing Page | ![landing](#) |
-| Login | ![login](#) |
-| Lobby | ![lobby](#) |
-| Meeting Room | ![meeting](#) |
-| History | ![history](#) |
-
----
-
 ## 🌐 Deployment
 
-- **Frontend** — [Render](https://meetsyncfrontend-21y2.onrender.com/)
+- **Live Demo** — [Render](https://meetsyncfrontend-21y2.onrender.com/)
 ---
 
 ## 📌 Future Improvements
