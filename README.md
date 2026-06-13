@@ -135,7 +135,7 @@ Socket.IO handles chat & signaling
 
 ## 🌐 Deployment
 
-- **Live Demo** — [Render](https://meetsyncfrontend-21y2.onrender.com/)
+- **Live Demo** — [Vercel](https://meet-sync-7get.vercel.app/)
 ---
 
 ## 📌 Future Improvements
