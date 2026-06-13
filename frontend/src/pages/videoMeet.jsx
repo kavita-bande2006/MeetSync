@@ -85,7 +85,7 @@ export default function VideoMeetComponent() {
         if (video !== undefined && audio !== undefined) {
             getUserMedia();
         }
-       
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [video, audio])
 
     let getMedia = () => {
@@ -257,7 +257,7 @@ export default function VideoMeetComponent() {
 
     useEffect(() => {
         if (screen !== undefined) { getDislayMedia(); }
-        
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [screen])
 
     let handleScreen = () => {
