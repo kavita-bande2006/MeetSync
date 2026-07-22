@@ -135,17 +135,7 @@ Socket.IO handles chat & signaling
 
 ## 🌐 Deployment
 
-- **Live Demo** — [Render](https://meetsyncfrontend-21y2.onrender.com/)
----
-
-## 📌 Future Improvements
-
-- [ ] Participant name display via WebRTC data channel
-- [ ] Virtual backgrounds
-- [ ] Meeting recording
-- [ ] Waiting room before joining
-- [ ] Mobile app (React Native)
-
+- **Live Demo** — [Vercel](https://meet-sync-7get.vercel.app/)
 ---
 
 ## 👩‍💻 Author
@@ -156,6 +146,3 @@ Socket.IO handles chat & signaling
 
 ---
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
