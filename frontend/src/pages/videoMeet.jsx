@@ -34,8 +34,8 @@ export default function VideoMeetComponent() {
     let [video, setVideo] = useState(false);
     let [audio, setAudio] = useState(false);
     let [screen, setScreen] = useState();
-    let [showModal, setModal] = useState(true);
-    const showModalRef = useRef(true);
+    let [showModal, setModal] = useState(false);
+    const showModalRef = useRef(false);
     let [screenAvailable, setScreenAvailable] = useState(!!navigator.mediaDevices?.getDisplayMedia);
     let [messages, setMessages] = useState([])
     let [message, setMessage] = useState("");
@@ -564,25 +564,29 @@ export default function VideoMeetComponent() {
                     {/* Remote videos grid */}
                     <div
                         className={`${style.conferenceView} ${showModal ? style.conferenceViewWithChat : ''}`}
-                        style={{
-                            gridTemplateColumns: videos.length === 1 ? '1fr' :
-                                                 videos.length === 2 ? 'repeat(2, 1fr)' :
-                                                 videos.length <= 4 ? 'repeat(2, 1fr)' :
-                                                 'repeat(3, 1fr)',
-                        }}
+                        // style={{
+                        //     gridTemplateColumns: isMobile
+                        //         ? '1fr'
+                        //         : videos.length === 1
+                        //             ? '1fr'
+                        //             : videos.length <= 4
+                        //                 ? 'repeat(2, 1fr)'
+                        //                 : 'repeat(3, 1fr)',
+                        // }}
                     >
                         {videos.map((video) => (
                             <div key={video.socketId} style={{
-                                height: videos.length === 1 ? '70vh' :
-                                        videos.length === 2 ? '60vh' :
-                                        '40vh',
+                                // height: videos.length === 1 ? '70vh' :
+                                //         videos.length === 2 ? '60vh' :
+                                //         '40vh',
+                                aspectRatio: "16/9",
                                 maxHeight: '500px',
                                 position: "relative",
                             }}>
                                 <video
                                     data-socket={video.socketId}
                                     ref={ref => { if (ref && video.stream) { ref.srcObject = video.stream; } }}
-                                    autoPlay
+                                    autoPlay  playsInline
                                     style={{ width: "100%", height: "100%", borderRadius: "12px", objectFit: "cover", background: "#16161f" }}
                                 />
                                 {/* Participant name label */}

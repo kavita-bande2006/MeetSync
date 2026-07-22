@@ -118,3 +118,27 @@
     gap: 8px;
     align-items: center;
 }
+
+
+
+@media (max-width: 768px) {
+
+  .conferenceView {
+    grid-template-columns: 1fr !important;
+  }
+
+  .conferenceViewWithChat {
+    margin-right: 0;
+  }
+
+  .chatRoom {
+    width: 100%;
+  }
+
+  .meetUserVideo {
+    position: absolute;
+    bottom: 90px;
+    right: 20px;
+    left: auto;
+  }
+}
